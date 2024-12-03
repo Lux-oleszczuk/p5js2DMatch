@@ -1,14 +1,26 @@
+// p = point
+let p = {x:200, y:400};
+let pSize = 20;
+let speed = 5;
+let theta = 5;
 function setup() {
   createCanvas(innerWidth, innerHeight);
   // random distribution
   // only execute draw once
-  noLoop();
+  //noLoop();
   // draw rectangle form centre
   rectMode(CENTER);
+  theta = random(TAU)
 }
 
 function draw() {
   background(220);
+///////////
+//angle from position
+//////////
+p.x = cos(theta) * speed;
+p.y = sin(theta) * speed;
+CSSNumericValue(p.x, p.y, pSize)
   //////////
   // mapping
   //////////
@@ -37,25 +49,31 @@ function draw() {
      //////////
   // random distribution
   //////////
-  noStroke();
-  //rgb
-  const size = 33;
-  let x,y;
-  for(let i = 0; i < 1000; i++) {
-    // layer 1
-    x = randomGaussian(width/2, 150)
-    y = randomGaussian(height/2, 150)
-    fill(165, 1, 2, 80)
-    square(x, y, size)
-// layer 2
-    x = randomGaussian(width/2, 100)
-    y = randomGaussian(height/2, 100)
-    fill(1, 39, 123, 80)
-    square(x, y, size)
-      // layer 3
-    x = randomGaussian(width/2, 50)
-    y = randomGaussian(height/2, 50)
-    fill(0, 51, 2, 169)
-    square(x, y, size)
-  }
+//   noStroke();
+//   //rgb
+//   const size = 33;
+//   let x,y;
+//   for(let i = 0; i < 1000; i++) {
+//     // layer 1
+//     x = randomGaussian(width/2, 150)
+//     y = randomGaussian(height/2, 150)
+//     fill(165, 1, 2, 80)
+//     square(x, y, size)
+// // layer 2
+//     x = randomGaussian(width/2, 100)
+//     y = randomGaussian(height/2, 100)
+//     fill(1, 39, 123, 80)
+//     square(x, y, size)
+//       // layer 3
+//     x = randomGaussian(width/2, 50)
+//     y = randomGaussian(height/2, 50)
+//     fill(0, 51, 2, 169)
+//     square(x, y, size)
+//   }
+
+///////////
+//radians
+//////////
+//Tau = 2 * PI
+// arc(width/2, 400, 400, 0, random(TAU))
 }
